@@ -1,18 +1,19 @@
 <html>
   <head>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <!-- dbexSync snippet (the very top of the page!!!)-->
+    <!-- DRIVEBACK SYNC EXPERIMENTS SNIPPET -->
     <style>.dbex-content-hide { opacity: 0 !important} </style>
     <script type="text/javascript">
        window.DBEX_HIDE_CONTENT_STRATEGY = 'sync'; // async/sync (default: sync)
        window.DBEX_HIDE_CONTENT_TIMEOUT = 1000; // minimum 1000/4000 for sync/async
     </script>
     <script type="text/javascript" src="js/dbex-sync.min.js"></script>
-    <!-- // dbexSync snippet -->
+    <!-- // DRIVEBACK SYNC EXPERIMENTS SNIPPET -->
   </head>
   <body>
     <!-- On this page should be: product image, product title, description, buy button -->
     <div class="buy_button">Купить</div>
+    <div class="reviews">Тут будут отзывы...</div>
     <!-- every product link should lead to product.html page -->
     <script type="text/javascript">
       // buy button experiment
@@ -25,6 +26,12 @@
         },
         3: function() {
           jQuery('.buy_button').addClass('blue');
+        }
+      });
+      // reviews experiment
+      dbexSync('8ba98f9d-406c-4274-9ca2-bebd1492e9a5', [0.5, 0.5], {
+        1: function() {
+          jQuery('.reviews').hide();
         }
       });
     </script>
