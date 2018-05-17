@@ -24,13 +24,13 @@
 ```
 
 1. `window.DBEX_HIDE_CONTENT_STRATEGY` может принимать следующие значения
-`sync` (по умолчанию) - если вы планируете использовать UX-тестирование только в синхронном модуле Driveback Experiments
-`async` - если вы планируете использовать UX-тестирование и в других (асинхронных) кампаниях Driveback
+* `sync` (по умолчанию) - если вы планируете использовать UX-тестирование только в синхронном модуле Driveback Experiments
+* `async` - если вы планируете использовать UX-тестирование и в других (асинхронных) кампаниях Driveback
 
 2. `window.DBEX_HIDE_CONTENT_TIMEOUT` задает максимальную задержку в отображение видимой области страницы в случае, если по какой-то причине скрипты Driveback не загрузились
 Рекомендуемые значния:
-`1000` для `window.DBEX_HIDE_CONTENT_STRATEGY = 'sync'`
-`4000` для `window.DBEX_HIDE_CONTENT_STRATEGY = 'async'`
+* `1000` для `window.DBEX_HIDE_CONTENT_STRATEGY = 'sync'`
+* `4000` для `window.DBEX_HIDE_CONTENT_STRATEGY = 'async'`
 
 3. Скрипт `dbex-sync.min.js` необходимо установить на свой собственный сервер для максимальной надежности, заменив при этом путь:
 ```
@@ -51,9 +51,9 @@ dbexSync('<EXPERIMENT_ID>', [<CONTROL_WEIGHT>, <VARIATION_1_WEIGHT>, <VARIATION_
 ```
 
 где,
-`EXPERIMENT_ID` - ID эксперимента, созданного в панели управления Driveback Experiments
-`CONTROL_WEIGHT` - Пропорчия трафика, которая идет в контрольную группу
-`VARIATION_1_WEIGHT, VARIATION_1_WEIGHT, ...` - Пропорция трафика, которая идет в каждую вариацию (в сумме, которольная вес контрольной группы + весь всех вариаций = 1)
+* `EXPERIMENT_ID` - ID эксперимента, созданного в панели управления Driveback Experiments
+* `CONTROL_WEIGHT` - Пропорчия трафика, которая идет в контрольную группу
+* `VARIATION_1_WEIGHT, VARIATION_1_WEIGHT, ...` - Пропорция трафика, которая идет в каждую вариацию (в сумме, которольная вес контрольной группы + весь всех вариаций = 1)
 
 Пример:
 ```
