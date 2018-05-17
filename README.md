@@ -23,7 +23,7 @@
 <!-- // DRIVEBACK SYNC EXPERIMENTS SNIPPET -->
 ```
 
-1. `window.DBEX_HIDE_CONTENT_STRATEGY` может принимать следующие значения
+1. `window.DBEX_HIDE_CONTENT_STRATEGY` может принимать следующие значения:
 * `sync` (по умолчанию) - если вы планируете использовать UX-тестирование только в синхронном модуле Driveback Experiments
 * `async` - если вы планируете использовать UX-тестирование и в других (асинхронных) кампаниях Driveback
 
