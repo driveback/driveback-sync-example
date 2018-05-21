@@ -1,39 +1,80 @@
 <html>
-  <head>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <!-- DRIVEBACK SYNC EXPERIMENTS SNIPPET -->
-    <style>.dbex-content-hide { opacity: 0 !important} </style>
-    <script type="text/javascript">
-       window.DBEX_HIDE_CONTENT_STRATEGY = 'sync'; // async/sync (default: sync)
-       window.DBEX_HIDE_CONTENT_TIMEOUT = 1000; // minimum 1000/4000 for sync/async
-    </script>
-    <script type="text/javascript" src="js/dbex-sync.min.js"></script>
-    <!-- // DRIVEBACK SYNC EXPERIMENTS SNIPPET -->
-  </head>
-  <body>
-    <!-- On this page should be: product image, product title, description, buy button -->
-    <div class="buy_button">Купить</div>
-    <div class="reviews">Тут будут отзывы...</div>
-    <!-- every product link should lead to product.html page -->
-    <script type="text/javascript">
-      // buy button experiment
-      dbexSync('ca7f272a-e881-489f-948f-e61e84a3ec7b', [0.1, 0.3, 0.3, 0.3], {
-        1: function() {
-          jQuery('.buy_button').addClass('red');
-        },
-        2: function() {
-          jQuery('.buy_button').addClass('green');
-        },
-        3: function() {
-          jQuery('.buy_button').addClass('blue');
-        }
-      });
-      // reviews experiment
-      dbexSync('8ba98f9d-406c-4274-9ca2-bebd1492e9a5', [0.5, 0.5], {
-        1: function() {
-          jQuery('.reviews').hide();
-        }
-      });
-    </script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" href="./css/style.css">
+  <!-- DRIVEBACK SYNC EXPERIMENTS SNIPPET -->
+  <style>
+    .dbex-content-hide {
+      opacity: 0 !important
+    }
+  </style>
+  <script type="text/javascript">
+    window.DBEX_HIDE_CONTENT_STRATEGY = 'sync'; // async/sync (default: sync)
+    window.DBEX_HIDE_CONTENT_TIMEOUT = 1000; // minimum 1000/4000 for sync/async
+  </script>
+  <script type="text/javascript" src="./js/dbex-sync.min.js"></script>
+  <!-- // DRIVEBACK SYNC EXPERIMENTS SNIPPET -->
+</head>
+
+<body>
+  <section id="product">
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <a href="./index.html">
+            <img src="./img/logo/db@2x.png" alt="logo">
+          </a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="./index.html">Главная </a>
+          <span>|</span>
+          <p>Продукт</p>
+        </div>
+        <div id="product-item">
+          <img src="./img/macbook@2x.png" alt="">
+          <h2>Macbook Pro</h2>
+          <ul class="product-des">
+            <li>2-ядерный процессор Intel Core i5 7-го поколения с тактовой частотой 2,3 ГГц</li>
+            <li>Ускорение Turbo Boost до 3,6 ГГц</li>
+            <li>8 ГБ памяти LPDDR3 2133 МГц</li>
+            <li>SSD-накопитель ёмкостью 128 ГБ1</li>
+            <li>Графический процессор Intel Iris Plus Graphics 640</li>
+            <li>Два порта Thunderbolt 3</li>
+          </ul>
+          <button class="buy_button">Купить</button>
+        </div>
+      </div>
+    </main>
+  </section>
+  <!-- On this page should be: product image, product title, description, buy button -->
+  <!-- every product link should lead to product.html page -->
+  <script type="text/javascript">
+    // buy button experiment
+    dbexSync('ca7f272a-e881-489f-948f-e61e84a3ec7b', [0.1, 0.3, 0.3, 0.3], {
+      1: function () {
+        jQuery('.buy_button').addClass('red');
+      },
+      2: function () {
+        jQuery('.buy_button').addClass('green');
+      },
+      3: function () {
+        jQuery('.buy_button').addClass('blue');
+      }
+    });
+    // reviews experiment
+    dbexSync('8ba98f9d-406c-4274-9ca2-bebd1492e9a5', [0.5, 0.5], {
+      1: function () {
+        jQuery('.reviews').hide();
+      }
+    });
+  </script>
+</body>
+
 </html>
