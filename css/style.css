@@ -1,5 +1,5 @@
 body {
-  background: #eeeeee;
+  background: #ffffff;
   font-family: Arial, sans-serif;
   width: 100%;
   margin: 0px;
@@ -19,7 +19,7 @@ body button {
 }
 
 footer {
-  background: #000000;
+  background: #343a40;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -174,13 +174,13 @@ b {
 
 header {
   border-bottom: 1px solid #eeeeee;
-  background-color: #000000;
+  background-color: #343a40;
 }
 
 header .header-content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 1em 0;
 }
 
@@ -202,7 +202,7 @@ header .header-content h1 {
 .main-content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 1em 0;
 }
 
@@ -212,47 +212,46 @@ header .header-content h1 {
   }
 }
 
-.main-content #main_title {
+#main_title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0;
-  padding-right: 1em;
-  color: #000000;
+  color: #ffffff;
+  width: 100%;
+  text-align: center;
 }
 
 @media (max-width: 991px) {
-  .main-content #main_title {
-    padding: 0;
-    margin-bottom: 0.5em;
-    text-align: center;
-    width: 60vw;
+  #main_title {
+    flex-direction: column;
   }
 }
 
-@media (max-width: 413px) {
-  .main-content #main_title {
-    width: 80vw;
-  }
+#main_title img {
+  padding-right: 0.5em;
 }
 
 .main-content #main_banner {
-  width: 45em;
+  width: 64vw;
   height: auto;
 }
 
 @media (max-width: 991px) {
   .main-content #main_banner {
-    width: 35em;
+    width: 71vw;
   }
 }
 
 @media (max-width: 767px) {
   .main-content #main_banner {
-    width: 20em;
+    width: 23.5em;
   }
 }
 
 @media (max-width: 413px) {
   .main-content #main_banner {
-    width: 15em;
+    width: 17.3em;
   }
 }
 
@@ -278,42 +277,65 @@ header .header-content h1 {
 }
 
 .catalog a {
-  padding: 1em;
   margin: 1em;
   border: 1px solid transparent;
   outline: none;
   text-decoration: none;
-  width: 30vw;
+  width: 30.222vw;
   cursor: pointer;
   transition: all 0.5s ease 0s;
 }
 
 @media (max-width: 991px) {
   .catalog a {
-    width: 39.5555vw;
+    width: 33.5555vw;
   }
 }
 
 @media (max-width: 767px) {
   .catalog a {
     width: 100%;
-    margin: 0;
+    margin: 0 0 1em 0;
     padding: 0;
   }
 }
 
-.catalog a:hover {
-  border: 1px solid #000000;
-  transition: all 0.5s ease 0s;
-}
-
 .catalog .catalog-item {
-  padding: 1em;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   cursor: pointer;
+
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+
+.catalog .catalog-item .item-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em 0;
+  width: 100%;
+  background-color: #cccccc;
+}
+
+.catalog .catalog-item .item-content {
+  padding: 1.25rem;
+  flex: 1 1 auto;
+}
+
+.catalog .catalog-item .item-footer {
+  padding: 0.75rem 1.25rem;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.catalog .catalog-item .item-footer small {
+  font-size: 80%;
+  font-weight: 400;
+  color: #6c757d !important;
 }
 
 .catalog .catalog-item img {
@@ -322,11 +344,12 @@ header .header-content h1 {
 }
 
 .catalog .catalog-item h2 {
+  color: #000000;
   margin: 0.5em 0;
 }
 
-.catalog .catalog-item h2 {
-  color: #000000;
+.catalog .catalog-item h2:hover {
+  text-decoration: underline;
 }
 
 .catalog-item-des {
@@ -337,7 +360,6 @@ header .header-content h1 {
 
 .catalog-item-des li {
   color: #000000;
-  text-align: center;
 }
 
 .catalog-item-des li:not(:last-child) {
