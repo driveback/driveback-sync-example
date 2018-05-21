@@ -1,0 +1,135 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- DRIVEBACK SYNC EXPERIMENTS SNIPPET -->
+  <style>
+    .dbex-content-hide {
+      opacity: 0 !important
+    }
+  </style>
+  <script type="text/javascript">
+    window.DBEX_HIDE_CONTENT_STRATEGY = 'sync'; // async/sync (default: sync)
+    window.DBEX_HIDE_CONTENT_TIMEOUT = 1000; // minimum 1000/4000 for sync/async
+  </script>
+  <script type="text/javascript" src="../js/dbex-sync.min.js"></script>
+  <!-- // DRIVEBACK SYNC EXPERIMENTS SNIPPET -->
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <img src="../img/logo/db@2x.png" alt="logo">
+        <h1>Driveback sync experiments</h1>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="first-block">
+      <div class="container">
+        <div class="main-content">
+          <h1 id="main_title">Сайт #1 (Контрольная группа | 20% трафика)</h1>
+          <img id="main_banner" src="../img/banner1.jpg" />
+        </div>
+      </div>
+    </section>
+    <section class="second-block">
+      <div class="container">
+        <div class="catalog-content">
+          <h1>Каталог</h1>
+          <div class="catalog">
+            <a href="./product.html">
+              <div class="catalog-item">
+                <img src="../img/macbook@2x.png" alt="">
+                <h2>Macbook Pro</h2>
+                <ul class="catalog-item-des">
+                  <li>2-ядерный процессор Intel Core i5 7-го поколения с тактовой частотой 2,3 ГГц</li>
+                  <li>Ускорение Turbo Boost до 3,6 ГГц</li>
+                  <li>8 ГБ памяти LPDDR3 2133 МГц</li>
+                  <li>SSD-накопитель ёмкостью 128 ГБ1</li>
+                  <li>Графический процессор Intel Iris Plus Graphics 640</li>
+                  <li>Два порта Thunderbolt 3</li>
+                </ul>
+              </div>
+            </a>
+            <a href="./product.html">
+              <div class="catalog-item">
+                <img src="../img/macbook@2x.png" alt="">
+                <h2>Macbook Pro</h2>
+                <ul class="catalog-item-des">
+                  <li>2-ядерный процессор Intel Core i5 7-го поколения с тактовой частотой 2,3 ГГц</li>
+                  <li>Ускорение Turbo Boost до 3,6 ГГц</li>
+                  <li>8 ГБ памяти LPDDR3 2133 МГц</li>
+                  <li>SSD-накопитель ёмкостью 128 ГБ1</li>
+                  <li>Графический процессор Intel Iris Plus Graphics 640</li>
+                  <li>Два порта Thunderbolt 3</li>
+                </ul>
+              </div>
+            </a>
+            <a href="./product.html">
+              <div class="catalog-item">
+                <img src="../img/macbook@2x.png" alt="">
+                <h2>Macbook Pro</h2>
+                <ul class="catalog-item-des">
+                  <li>2-ядерный процессор Intel Core i5 7-го поколения с тактовой частотой 2,3 ГГц</li>
+                  <li>Ускорение Turbo Boost до 3,6 ГГц</li>
+                  <li>8 ГБ памяти LPDDR3 2133 МГц</li>
+                  <li>SSD-накопитель ёмкостью 128 ГБ1</li>
+                  <li>Графический процессор Intel Iris Plus Graphics 640</li>
+                  <li>Два порта Thunderbolt 3</li>
+                </ul>
+              </div>
+            </a>
+            <a href="./product.html">
+              <div class="catalog-item">
+                <img src="../img/macbook@2x.png" alt="">
+                <h2>Macbook Pro</h2>
+                <ul class="catalog-item-des">
+                  <li>2-ядерный процессор Intel Core i5 7-го поколения с тактовой частотой 2,3 ГГц</li>
+                  <li>Ускорение Turbo Boost до 3,6 ГГц</li>
+                  <li>8 ГБ памяти LPDDR3 2133 МГц</li>
+                  <li>SSD-накопитель ёмкостью 128 ГБ1</li>
+                  <li>Графический процессор Intel Iris Plus Graphics 640</li>
+                  <li>Два порта Thunderbolt 3</li>
+                </ul>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <img src="../img/logo/db@2x.png" alt="footer-logo">
+      </div>
+    </div>
+  </footer>
+  <!-- On this page should be: top menu, main title, main banner, 3-4 similar products -->
+  <!-- every product link should lead to product.html page -->
+  <script type="text/javascript">
+    // main title experiment
+    dbexSync('40cde066-381f-4497-938c-e1af8de93dff', [0.2, 0.4, 0.4], {
+      1: function () {
+        jQuery('#main_title').text('Сайт #2 (Вариация 1 | 40% трафика)');
+      },
+      2: function () {
+        jQuery('#main_title').text('Сайт #3 (Вариация 2 | 40% трафика)');
+      }
+    });
+
+    // main banner experiment
+    dbexSync('d1b95b04-d0b2-4e70-8990-57726e7148b6', [0.5, 0.5], {
+      1: function () {
+        jQuery('#main_banner').attr('src', '../img/banner2.jpg');
+      }
+    });
+  </script>
+</body>
+
+</html>
