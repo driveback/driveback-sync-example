@@ -102,9 +102,6 @@
     setTimeout(showContent, window.DBEX_HIDE_CONTENT_TIMEOUT || 1000);
   }
 
-  loadVariationsInfoFromCookies();
-  hideContent();
-
   window.DrivebackOnLoad = window.DrivebackOnLoad || [];
 
   window.dbexSync = function dbexSync(experimentId, weights, handlers) {
@@ -120,14 +117,18 @@
           console.error(e);
         }
       }
-      if (window.DBEX_HIDE_CONTENT_STRATEGY !== 'async') {
-        domIsReady(function() {
-          setTimeout(showContent, 5);
-        });
-      }
       window.DrivebackOnLoad.push(function trackSession() {
         window.Driveback.trackExperiment(experimentId, variation);
       });
     }
   };
+
+  loadVariationsInfoFromCookies();
+  hideContent();
+
+  if (window.DBEX_HIDE_CONTENT_STRATEGY !== 'async') {
+    domIsReady(function() {
+      setTimeout(showContent, 5);
+    });
+  }
 }());
