@@ -1,6 +1,8 @@
 # Driveback Sync Experiments
 Пример использования модуля Driveback Sync Experiments для UX-тестирования сайта
 
+[Ссылка на демо](https://dbex-demo.driveback.ru/)
+
 **Важно**: модуль Driveback Sync Experiments не работает отдельно от платформы Driveback
 
 Основной функционал платформы Driveback добавляет:
