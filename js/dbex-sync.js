@@ -104,7 +104,14 @@
 
   window.DrivebackOnLoad = window.DrivebackOnLoad || [];
 
-  window.dbexSync = function dbexSync(experimentId, weights, handlers) {
+  window.dbexSync = function dbexSync(experimentIds, weights, handlers) {
+    var experimentId;
+    if (typeof experimentIds === 'string') { // array of experiments
+      experimentId = experimentIds;
+      experimentIds = [experimentIds];
+    } else {
+      experimentId = experimentIds[0];
+    }
     var variation = getChosenVariation(experimentId);
     if (variation < 0) {
       variation = chooseVariation(weights);
@@ -117,9 +124,11 @@
           console.error(e);
         }
       }
-      window.DrivebackOnLoad.push(function trackSession() {
-        window.Driveback.trackExperiment(experimentId, variation);
-      });
+      for (var i = 0; i < experimentIds.length; i++) {
+        window.DrivebackOnLoad.push(function trackSession() {
+          window.Driveback.trackExperiment(experimentIds[i], variation);
+        });
+      } 
     }
   };
 
