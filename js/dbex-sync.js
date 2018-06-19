@@ -108,7 +108,6 @@
     var experimentId;
     if (typeof experimentIds === 'string') { // array of experiments
       experimentId = experimentIds;
-      experimentIds = [experimentIds];
     } else {
       experimentId = experimentIds[0];
     }
@@ -124,11 +123,9 @@
           console.error(e);
         }
       }
-      for (var i = 0; i < experimentIds.length; i++) {
-        window.DrivebackOnLoad.push(function trackSession() {
-          window.Driveback.trackExperiment(experimentIds[i], variation);
-        });
-      } 
+      window.DrivebackOnLoad.push(function trackSession() {
+        window.Driveback.trackExperiment(experimentIds, variation);
+      });
     }
   };
 
